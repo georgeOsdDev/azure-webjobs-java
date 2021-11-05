@@ -1,5 +1,6 @@
 package edisga;
 import java.time.LocalDateTime;
+import java.util.Map;
 
 public class HelloWorld {
 	public static void main(String[] args) {
@@ -20,5 +21,11 @@ public class HelloWorld {
 		System.out.println("Total Memory:" + runtime.totalMemory() / mb);
 		//Print Maximum available memory
 		System.out.println("Max Memory:" + runtime.maxMemory() / mb);
+
+
+		Map<String, String> environmentVariables = System.getenv();
+		for(Map.Entry<String, String> entry : environmentVariables.entrySet()) {
+				System.out.println("Env: " + entry.getKey() + " = " + entry.getValue());
+		}
 	}
 }
